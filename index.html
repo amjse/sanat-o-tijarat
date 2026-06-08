@@ -62,17 +62,14 @@
     justify-content: space-between;
     padding: 14px 40px;
   }
-  .logo-area { display: flex; align-items: center; gap: 16px; }
+  .logo-area { display: flex; align-items: center; gap: 14px; }
   .logo-icon {
-    width: 56px; height: 56px;
-    background: var(--green-deep);
-    border-radius: 50%;
+    width: 72px; height: 72px;
     display: flex; align-items: center; justify-content: center;
-    color: var(--gold);
-    font-family: 'Amiri', serif;
-    font-size: 1.3rem;
     flex-shrink: 0;
+    background: transparent;
   }
+  .logo-icon img { width: 100%; height: 100%; object-fit: contain; display: block; }
   .logo-text { line-height: 1.2; }
   .logo-text .org { font-family: 'Playfair Display', serif; font-size: 1.35rem; font-weight: 800; color: var(--green-deep); }
   .logo-text .sub { font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); }
@@ -346,6 +343,11 @@
     font-size: 1.5rem;
     color: var(--gold);
     margin-bottom: 12px;
+    overflow: hidden;
+  }
+  .message-card-header .portrait img {
+    width: 100%; height: 100%;
+    object-fit: cover;
   }
   .message-card-header h3 {
     font-family: 'Playfair Display', serif;
@@ -404,6 +406,11 @@
     font-size: 2.2rem;
     color: var(--gold);
     flex-shrink: 0;
+    overflow: hidden;
+  }
+  .secretary-portrait img {
+    width: 100%; height: 100%;
+    object-fit: cover;
   }
   .secretary-content .pre { font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
   .secretary-content h3 {
@@ -433,7 +440,7 @@
   .activities { background: var(--white); }
   .activities-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 24px;
     margin-top: 40px;
   }
@@ -683,7 +690,7 @@
     border-bottom: 1px solid rgba(255,255,255,0.1);
     margin-bottom: 28px;
   }
-  .footer-brand .logo-icon { background: rgba(201,168,76,0.15); margin-bottom: 16px; }
+  .footer-brand .logo-icon { background: transparent; margin-bottom: 16px; width: 80px; height: 80px; }
   .footer-brand .org { color: var(--white); }
   .footer-brand .sub { color: rgba(255,255,255,0.5); }
   .footer-brand p { font-size: 0.85rem; line-height: 1.7; margin-top: 14px; }
@@ -744,7 +751,7 @@
 <header>
   <div class="header-inner">
     <div class="logo-area">
-      <div class="logo-icon">صت</div>
+      <div class="logo-icon"><img src="logo.png" alt="SOT Sweden logo" /></div>
       <div class="logo-text">
         <div class="org">Sanat-O-Tijarat</div>
         <div class="sub">Ahmadiyya Muslim Jamaat Sweden</div>
@@ -825,7 +832,7 @@
       <!-- Hazrat Musleh Maud -->
       <div class="message-card">
         <div class="message-card-header">
-          <div class="portrait">م</div>
+          <div class="portrait"><img src="hazrat-musleh-maud.jpg" alt="Hazrat Musleh Maud (RA)"></div>
           <h3>Hazrat Musleh Maud <span style="color:var(--gold)">(RA)</span></h3>
           <div class="role">Second Caliph of the Ahmadiyya Muslim Community</div>
         </div>
@@ -843,7 +850,7 @@
       <!-- Hazrat Mirza Tahir Ahmad -->
       <div class="message-card">
         <div class="message-card-header">
-          <div class="portrait">ط</div>
+          <div class="portrait"><img src="hazrat-mirza-tahir-ahmad.jpeg" alt="Hazrat Mirza Tahir Ahmad (RA)"></div>
           <h3>Hazrat Mirza Tahir Ahmad <span style="color:var(--gold)">(RA)</span></h3>
           <div class="role">Khalifatul Masih Al-Rabi' — Friday Sermon, 15 April 1983</div>
         </div>
@@ -855,7 +862,7 @@
             He outlined that the progress of the Jamaat was deeply linked to the economic and professional advancement of its members, and that engaging in honest trade was itself a form of worship. This sermon remains a foundational reference for our department's mission.
           </p>
           <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:4px;">
-            <a href="https://sotusa.wpengine.com/sermon-in-english/" target="_blank" class="read-more">Read in English →</a>
+            <a href="sermon.html" class="read-more">Read in English →</a>
             <a href="https://www.alislam.org/urdu/sermon/FST19830415-UR.pdf" target="_blank" class="read-more" style="margin-left:12px;">اردو میں پڑھیں →</a>
           </div>
         </div>
@@ -864,7 +871,7 @@
 
     <!-- Secretary Message -->
     <div class="secretary-msg">
-      <div class="secretary-portrait">ص</div>
+      <div class="secretary-portrait"><img src="national-sec-sot.png" alt="National Secretary, Sanat-O-Tijarat Sweden"></div>
       <div class="secretary-content">
         <div class="pre">National Secretary's Message</div>
         <h3>Message from the National Secretary — Sanat-O-Tijarat Sweden</h3>
@@ -881,7 +888,8 @@
           I invite every Ahmadi professional, business owner, student, and entrepreneur in Sweden to connect with us, share your expertise, and join our growing network. Together, through commerce rooted in faith, we can be a shining example for the broader Swedish society.
         </p>
         <div class="secretary-sig">
-          National Secretary, Sanat-O-Tijarat
+          Nosherwan Adil
+          <div class="title">National Secretary, Sanat-O-Tijarat</div>
           <div class="title">Ahmadiyya Muslim Jamaat Sweden</div>
         </div>
       </div>
@@ -925,29 +933,11 @@
       </div>
       <div class="activity-card">
         <div class="activity-icon-wrap">
-          <div class="activity-icon">💼</div>
-          <h4>Business Ethics &amp; Islam</h4>
-        </div>
-        <div class="activity-body">
-          <p>Regular study circles and discussions on Quranic principles of trade, the prohibition of Riba (interest), ethical investment, and the Hadith on honest dealings — integrating spiritual grounding with professional practice.</p>
-        </div>
-      </div>
-      <div class="activity-card">
-        <div class="activity-icon-wrap">
           <div class="activity-icon">🎓</div>
           <h4>Youth Career Support</h4>
         </div>
         <div class="activity-body">
           <p>Dedicated programmes for Ahmadi students and young professionals: CV workshops, mock interviews, university application guidance, and access to a directory of Ahmadi professionals willing to support youth career growth.</p>
-        </div>
-      </div>
-      <div class="activity-card">
-        <div class="activity-icon-wrap">
-          <div class="activity-icon">🌍</div>
-          <h4>Community Reporting</h4>
-        </div>
-        <div class="activity-body">
-          <p>Compiling annual reports on the professional demographics and economic contributions of Ahmadi Muslims in Sweden, and coordinating with international Sanat-O-Tijarat departments to share best practices.</p>
         </div>
       </div>
     </div>
@@ -961,14 +951,6 @@
     <h2 class="section-title">Upcoming Events &amp; Important Dates</h2>
     <div class="divider"></div>
     <div class="events-list">
-      <div class="event-item">
-        <div class="event-date"><div class="day">20</div><div class="mon">Jun 2026</div></div>
-        <div class="event-info">
-          <h4>Sanat-O-Tijarat National Annual Meeting 2026</h4>
-          <p>Annual gathering for members to review the year's work, set goals, and strengthen the national network. Location: TBD — register your interest early.</p>
-        </div>
-        <span class="event-tag">Annual</span>
-      </div>
       <div class="event-item">
         <div class="event-date"><div class="day">12</div><div class="mon">Jul 2026</div></div>
         <div class="event-info">
@@ -1023,7 +1005,7 @@
           He called on members to pursue professional and business excellence as an act of worship, to engage in ethical trade, to avoid all forms of dishonesty, and to contribute their skills and resources to the betterment of society.
         </p>
         <div class="sermon-links">
-          <a href="https://sotusa.wpengine.com/sermon-in-english/" target="_blank" class="sermon-link en">🇬🇧 Read in English</a>
+          <a href="sermon.html" class="sermon-link en">🇬🇧 Read in English</a>
           <a href="https://www.alislam.org/urdu/sermon/FST19830415-UR.pdf" target="_blank" class="sermon-link ur">اردو میں پڑھیں</a>
         </div>
       </div>
@@ -1093,13 +1075,6 @@
             <span>Sweden 🇸🇪</span>
           </div>
         </div>
-        <div class="contact-item">
-          <div class="contact-item-icon">📱</div>
-          <div class="contact-item-text">
-            <div class="label">International HQ</div>
-            <a href="https://www.alislam.org" target="_blank">www.alislam.org</a>
-          </div>
-        </div>
       </div>
       <div class="contact-form">
         <h3>Send Us a Message</h3>
@@ -1139,7 +1114,7 @@
     <div class="footer-top">
       <div class="footer-brand">
         <div class="logo-area">
-          <div class="logo-icon footer-brand">صت</div>
+          <div class="logo-icon"><img src="logo.png" alt="SOT Sweden logo" /></div>
           <div class="logo-text">
             <div class="org">Sanat-O-Tijarat</div>
             <div class="sub">Ahmadiyya Sweden</div>
@@ -1157,7 +1132,7 @@
       </div>
       <div class="footer-col">
         <h4>Resources</h4>
-        <a href="https://sotusa.wpengine.com/sermon-in-english/" target="_blank">Sermon in English</a>
+        <a href="sermon.html">Sermon in English</a>
         <a href="https://www.alislam.org/urdu/sermon/FST19830415-UR.pdf" target="_blank">Sermon in Urdu</a>
         <a href="https://www.alislam.org" target="_blank">Al-Islam.org</a>
         <a href="https://sotusa.org" target="_blank">SoT USA</a>
@@ -1173,8 +1148,7 @@
     <div class="footer-bottom">
       <span>© 2026 Sanat-O-Tijarat — Ahmadiyya Muslim Jamaat Sweden. All rights reserved.</span>
       <span>
-        <a href="https://www.ahmadiyya.se" target="_blank">Main Site</a> &nbsp;·&nbsp;
-        <a href="https://www.alislam.org" target="_blank">alislam.org</a>
+        <a href="http://ahmadiyya.se/" target="_blank">Main Site</a>
       </span>
     </div>
   </div>

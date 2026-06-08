@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Friday Sermon (15 April 1983) | Sanat-O-Tijarat Sweden</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,800;1,400&family=DM+Sans:wght@300;400;500;600&family=Amiri:wght@400;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --green-deep: #1a3a2a;
+    --green-mid:  #2d6a4f;
+    --green-light:#52b788;
+    --gold:       #c9a84c;
+    --gold-light: #e8c97a;
+    --cream:      #faf7f0;
+    --cream-dark: #f0ebe0;
+    --text:       #1c1c1c;
+    --text-muted: #5a5a5a;
+    --white:      #ffffff;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    overflow-x: hidden;
+  }
+
+  /* ── TOP BAR ── */
+  .topbar {
+    background: var(--green-deep);
+    color: var(--gold-light);
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+    padding: 6px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .topbar a { color: var(--gold-light); text-decoration: none; }
+  .topbar a:hover { text-decoration: underline; }
+  .topbar-bismillah { font-family: 'Amiri', serif; font-size: 1rem; letter-spacing: 0.06em; }
+
+  /* ── HEADER / NAV ── */
+  header {
+    background: var(--white);
+    border-bottom: 3px solid var(--gold);
+    position: sticky; top: 0; z-index: 100;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+  }
+  .header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 40px;
+  }
+  .logo-area { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+  .logo-icon {
+    width: 72px; height: 72px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    background: transparent;
+  }
+  .logo-icon img { width: 100%; height: 100%; object-fit: contain; display: block; }
+  .logo-text { line-height: 1.2; }
+  .logo-text .org { font-family: 'Playfair Display', serif; font-size: 1.35rem; font-weight: 800; color: var(--green-deep); }
+  .logo-text .sub { font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); }
+
+  nav { display: flex; gap: 28px; align-items: center; }
+  nav a {
+    color: var(--text);
+    text-decoration: none;
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    position: relative;
+    padding-bottom: 2px;
+    transition: color 0.2s;
+  }
+  nav a::after {
+    content: '';
+    position: absolute; bottom: 0; left: 0; right: 100%;
+    height: 2px; background: var(--gold);
+    transition: right 0.25s ease;
+  }
+  nav a:hover { color: var(--green-mid); }
+  nav a:hover::after { right: 0; }
+  nav .btn-cta {
+    background: var(--green-deep);
+    color: var(--gold-light) !important;
+    padding: 9px 20px;
+    border-radius: 4px;
+    letter-spacing: 0.08em;
+  }
+  nav .btn-cta::after { display: none; }
+  nav .btn-cta:hover { background: var(--green-mid); }
+
+  /* ── HERO (page header) ── */
+  .page-hero {
+    background: linear-gradient(135deg, var(--green-deep) 0%, #0f2a1c 100%);
+    color: var(--white);
+    padding: 70px 40px 60px;
+    position: relative;
+    overflow: hidden;
+  }
+  .page-hero::before {
+    content: '';
+    position: absolute; right: -80px; top: -80px;
+    width: 320px; height: 320px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(201,168,76,0.14), transparent 70%);
+  }
+  .page-hero-inner { max-width: 900px; margin: 0 auto; position: relative; z-index: 1; }
+  .crumbs {
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 18px;
+  }
+  .crumbs a { color: var(--gold-light); text-decoration: none; }
+  .crumbs a:hover { text-decoration: underline; }
+  .crumbs .sep { opacity: 0.5; margin: 0 8px; }
+  .page-hero .label {
+    color: var(--gold);
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .page-hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.9rem, 4vw, 2.8rem);
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 18px;
+  }
+  .page-hero .meta {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.65);
+    margin-bottom: 26px;
+  }
+  .page-hero .meta strong { color: var(--gold-light); font-weight: 600; }
+  .page-hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+  .pill {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 9px 18px;
+    border-radius: 4px;
+    font-size: 0.8rem; font-weight: 600;
+    text-decoration: none;
+    letter-spacing: 0.04em;
+  }
+  .pill.gold { background: var(--gold); color: var(--green-deep); }
+  .pill.gold:hover { background: var(--gold-light); }
+  .pill.ghost { background: transparent; border: 1.5px solid rgba(255,255,255,0.3); color: var(--white); }
+  .pill.ghost:hover { border-color: var(--gold); background: rgba(201,168,76,0.1); }
+
+  /* ── ARTICLE BODY ── */
+  .article-wrap { background: var(--white); padding: 70px 40px; }
+  .article {
+    max-width: 760px;
+    margin: 0 auto;
+    background: var(--white);
+  }
+  .article .verse-block {
+    background: var(--cream);
+    border-left: 4px solid var(--gold);
+    border-radius: 0 8px 8px 0;
+    padding: 26px 30px;
+    margin: 0 0 36px;
+  }
+  .article .verse-block .arabic {
+    font-family: 'Amiri', serif;
+    font-size: 1.5rem;
+    color: var(--green-deep);
+    direction: rtl;
+    text-align: right;
+    line-height: 1.9;
+    margin-bottom: 12px;
+  }
+  .article .verse-block .translation {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    font-style: italic;
+    line-height: 1.7;
+  }
+  .article .verse-block .ref {
+    display: block;
+    margin-top: 8px;
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--green-mid);
+    font-style: normal;
+    font-weight: 600;
+  }
+  .article p {
+    font-size: 1.05rem;
+    line-height: 1.9;
+    color: var(--text);
+    margin-bottom: 22px;
+  }
+  .article p:first-of-type::first-letter {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.4rem;
+    font-weight: 800;
+    color: var(--green-deep);
+    float: left;
+    line-height: 1;
+    padding: 4px 12px 0 0;
+  }
+  .article .attribution {
+    margin-top: 40px;
+    padding: 24px 28px;
+    background: var(--cream-dark);
+    border-radius: 8px;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    color: var(--green-deep);
+    font-size: 1.02rem;
+  }
+  .article .attribution .title {
+    display: block;
+    font-family: 'DM Sans', sans-serif;
+    font-style: normal;
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-top: 6px;
+  }
+  .article .source-note {
+    margin-top: 26px;
+    padding-top: 22px;
+    border-top: 1px solid var(--cream-dark);
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+  .article .source-note a { color: var(--green-mid); }
+
+  .back-row {
+    max-width: 760px;
+    margin: 40px auto 0;
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .back-row a {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 11px 22px;
+    border-radius: 4px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+  }
+  .back-row .back { background: var(--green-deep); color: var(--gold-light); }
+  .back-row .back:hover { background: var(--green-mid); }
+  .back-row .urdu { background: transparent; border: 1.5px solid var(--green-deep); color: var(--green-deep); }
+  .back-row .urdu:hover { background: var(--green-deep); color: var(--gold-light); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--green-deep);
+    color: rgba(255,255,255,0.7);
+    padding: 60px 40px 28px;
+  }
+  .footer-inner { max-width: 1200px; margin: 0 auto; }
+  .footer-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 48px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    margin-bottom: 28px;
+  }
+  .footer-brand .logo-icon { background: transparent; margin-bottom: 16px; width: 80px; height: 80px; }
+  .footer-brand .org { color: var(--white); }
+  .footer-brand .sub { color: rgba(255,255,255,0.5); }
+  .footer-brand p { font-size: 0.85rem; line-height: 1.7; margin-top: 14px; }
+  .footer-col h4 {
+    font-size: 0.75rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 16px;
+    font-weight: 600;
+  }
+  .footer-col a {
+    display: block;
+    color: rgba(255,255,255,0.65);
+    text-decoration: none;
+    font-size: 0.87rem;
+    margin-bottom: 10px;
+    transition: color 0.2s;
+  }
+  .footer-col a:hover { color: var(--gold-light); }
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.35);
+  }
+  .footer-bottom a { color: rgba(255,255,255,0.5); text-decoration: none; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .topbar { padding: 6px 20px; }
+    .header-inner, .page-hero, .article-wrap { padding-left: 20px; padding-right: 20px; }
+    nav { display: none; }
+    .footer-top { grid-template-columns: 1fr 1fr; gap: 32px; }
+    footer { padding: 48px 20px 20px; }
+    .article p:first-of-type::first-letter { font-size: 2.8rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <span class="topbar-bismillah">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيمِ</span>
+  <span>In the name of Allah, the Gracious, the Merciful &nbsp;|&nbsp;
+    <a href="https://www.ahmadiyya.se/" target="_blank">Ahmadiyya Sweden</a> &nbsp;|&nbsp;
+    <a href="https://www.alislam.org/" target="_blank">alislam.org</a>
+  </span>
+</div>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo-area">
+      <div class="logo-icon"><img src="logo.png" alt="SOT Sweden logo" /></div>
+      <div class="logo-text">
+        <div class="org">Sanat-O-Tijarat</div>
+        <div class="sub">Ahmadiyya Muslim Jamaat Sweden</div>
+      </div>
+    </a>
+    <nav>
+      <a href="index.html#about">About</a>
+      <a href="index.html#messages">Messages</a>
+      <a href="index.html#activities">Activities</a>
+      <a href="index.html#events">Events</a>
+      <a href="index.html#sermon">Sermon</a>
+      <a href="index.html#contact" class="btn-cta">Contact Us</a>
+    </nav>
+  </div>
+</header>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <div class="crumbs">
+      <a href="index.html">Home</a><span class="sep">/</span><a href="index.html#sermon">Sermon</a><span class="sep">/</span>English
+    </div>
+    <div class="label">Khutbat-e-Tahir · Volume 2 · Pages 217–228</div>
+    <h1>Friday Sermon on Excelling in All Fields Including Sanat-O-Tijarat</h1>
+    <p class="meta">
+      <strong>Hazrat Khalifatul Masih IV (RA)</strong> &nbsp;·&nbsp; 15 April 1983 &nbsp;·&nbsp; Masjid-e-Aqsa, Rabwah
+    </p>
+    <div class="page-hero-actions">
+      <a href="https://www.alislam.org/urdu/sermon/FST19830415-UR.pdf" target="_blank" class="pill gold">اردو میں پڑھیں (PDF)</a>
+      <a href="index.html#sermon" class="pill ghost">← Back to Sermon Section</a>
+    </div>
+  </div>
+</section>
+
+<!-- ARTICLE -->
+<div class="article-wrap">
+  <article class="article">
+
+    <div class="verse-block">
+      <div class="arabic">وَلِكُلٍّ وِجْهَةٌ هُوَ مُوَلِّيهَا ۖ فَاسْتَبِقُوا الْخَيْرَاتِ</div>
+      <div class="translation">
+        "And for everyone there is a goal which dominates him; vie, then, with one another in good works."
+        <span class="ref">— Holy Quran (2:148)</span>
+      </div>
+    </div>
+
+    <p>
+      What a magnificent curriculum indeed with such high ideals. It is not said that excel only in prayers or adopt one attribute and leave the rest; it is commanded that your objective is to advance from others in every attribute. In this most succinct line confines every good of the world. What Quran-e-Karim has put this view in front of Jamat Ahmadiyya is to dominate in each walk of life.
+    </p>
+
+    <p>
+      Not only in sports, we have to excel in trade and industry from the rest of the world. We have to out-march in science too.
+    </p>
+
+    <p>
+      The results which science renders, human being practically applies those inventions in industry and trade. A central cell in Tehreek-e-Jadeed is formed to brainstorm and ponder on how to benefit from the brains of the Ahmadi businessman of the whole world, Ahmadi industrialists of the whole world and the Ahmadi scientists of the whole world, will be stirred to turn their attention towards this idea — that how an Ahmadi can transform the Ahmadi scientist's idea into action and to benefit from their inventions.
+    </p>
+
+    <p>
+      In order to achieve the objective, honesty is the key. A scientist would put forth an invention, but what if the industrialist is not trustworthy? It would waste an opportunity. It is only with his credibility that he can advance the fruits of the invention or can thrive in that contribution.
+    </p>
+
+    <p>
+      The credibility is a must — in sports and in trade and in science — and they have to elevate in virtue. Businessmen, industrialists and scientists will have to improve the standards of the high morals and credibility.
+    </p>
+
+    <p>
+      There are many backward countries which incurred deep economical losses because of unvirtuous dishonesty. Unfortunately our country is one of them; it has quite a few good industries which can dominate the world market, but due to the unauthentic and dishonest approaches they damaged the trade of the country.
+    </p>
+
+    <p>
+      The fact is, if we keep this Quranic verse in front of us and attempt the objective under the commandment of God, it would definitely yield great benefit to our industries. Our businessmen and our economy would benefit from it, but the highest benefit would be that God will be pleased with us.
+    </p>
+
+    <p>
+      We had to strive to offer our skills and strategies with generosity to the rest. It's a habit of the businessman that if they get a good opportunity they will keep it to themselves and will make every effort that nobody else should enter in that field. Similarly our industrialist has this shortcoming — which one can find in other walks of life also — that we become tight-fisted to spread the good. This is a symbol of the decline of national interest.
+    </p>
+
+    <p>
+      If you compare the advancement of East with the West, you will see the East tend to hide and keep the skill or knowledge to themselves in generation after generation, and they boast that "we keep this secret in our hearts for the last seven generations" or so. But on the other hand the West propagates the knowledge, transfers the knowledge and skills to the people, resulting into what was the individual's wealth becoming the wealth of the whole nation. It didn't remain a personal wealth. Therefore everybody who learned that knowledge is to transfer it to the people around.
+    </p>
+
+    <p>
+      God has commanded Muslims to spend whatever is given to him in His way. So those achievements which are not only spiritual but material as well, has to trickle down to fellow beings. Promised Messiah (peace be upon him) narrated this verse very subtly — that it is not only money but all the capabilities to spend in Allah's way. Those who spend in Allah's way have been given glad tiding that by spending they will not decrease their skills and wealth or strength, but due to their relationship with God this treasure will not end and will not diminish.
+    </p>
+
+    <p>
+      This is the thesis of the progress of a human being, and this is how to vie one another in good works.
+    </p>
+
+    <div class="attribution">
+      — Hazrat Khalifatul Masih IV (RA)
+      <span class="title">Friday Sermon · 15 April 1983 · Masjid-e-Aqsa, Rabwah</span>
+    </div>
+
+    <p class="source-note">
+      Source: <em>Khutbat-e-Tahir</em>, Volume 2, pages 217–228. The original Urdu sermon is available as a
+      <a href="https://www.alislam.org/urdu/sermon/FST19830415-UR.pdf" target="_blank">PDF on alislam.org</a>.
+      English rendering reproduced from the Sanat-O-Tijarat archive.
+    </p>
+  </article>
+
+  <div class="back-row">
+    <a href="index.html#sermon" class="back">← Back to Sermon</a>
+    <a href="https://www.alislam.org/urdu/sermon/FST19830415-UR.pdf" target="_blank" class="urdu">اردو PDF</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="logo-area">
+          <div class="logo-icon"><img src="logo.png" alt="SOT Sweden logo" /></div>
+          <div class="logo-text">
+            <div class="org">Sanat-O-Tijarat</div>
+            <div class="sub">Ahmadiyya Sweden</div>
+          </div>
+        </div>
+        <p>A department of Ahmadiyya Muslim Jamaat Sweden dedicated to professional excellence, ethical commerce, and economic empowerment rooted in Islamic values.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <a href="index.html#about">About Us</a>
+        <a href="index.html#messages">Messages</a>
+        <a href="index.html#activities">Activities</a>
+        <a href="index.html#events">Events</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <a href="sermon.html">Sermon in English</a>
+        <a href="https://www.alislam.org/urdu/sermon/FST19830415-UR.pdf" target="_blank">Sermon in Urdu</a>
+        <a href="https://www.alislam.org" target="_blank">Al-Islam.org</a>
+        <a href="https://sotusa.org" target="_blank">SoT USA</a>
+      </div>
+      <div class="footer-col">
+        <h4>Jamaat Sweden</h4>
+        <a href="https://www.ahmadiyya.se" target="_blank">Ahmadiyya.se</a>
+        <a href="https://www.jalsasalana.se" target="_blank">Jalsa Salana SE</a>
+        <a href="https://www.alislam.org" target="_blank">World Jamaat</a>
+        <a href="https://www.linkedin.com/" target="_blank">LinkedIn Group</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Sanat-O-Tijarat — Ahmadiyya Muslim Jamaat Sweden. All rights reserved.</span>
+      <span>
+        <a href="http://ahmadiyya.se/" target="_blank">Main Site</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
