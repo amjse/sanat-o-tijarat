@@ -1,0 +1,1184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sanat-O-Tijarat Sweden | Ahmadiyya Muslim Jamaat</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,800;1,400&family=DM+Sans:wght@300;400;500;600&family=Amiri:wght@400;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --green-deep: #1a3a2a;
+    --green-mid:  #2d6a4f;
+    --green-light:#52b788;
+    --gold:       #c9a84c;
+    --gold-light: #e8c97a;
+    --cream:      #faf7f0;
+    --cream-dark: #f0ebe0;
+    --text:       #1c1c1c;
+    --text-muted: #5a5a5a;
+    --white:      #ffffff;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    overflow-x: hidden;
+  }
+
+  /* ── TOP BAR ── */
+  .topbar {
+    background: var(--green-deep);
+    color: var(--gold-light);
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+    padding: 6px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .topbar a { color: var(--gold-light); text-decoration: none; }
+  .topbar a:hover { text-decoration: underline; }
+  .topbar-bismillah { font-family: 'Amiri', serif; font-size: 1rem; letter-spacing: 0.06em; }
+
+  /* ── HEADER / NAV ── */
+  header {
+    background: var(--white);
+    border-bottom: 3px solid var(--gold);
+    position: sticky; top: 0; z-index: 100;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+  }
+  .header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 40px;
+  }
+  .logo-area { display: flex; align-items: center; gap: 16px; }
+  .logo-icon {
+    width: 56px; height: 56px;
+    background: var(--green-deep);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--gold);
+    font-family: 'Amiri', serif;
+    font-size: 1.3rem;
+    flex-shrink: 0;
+  }
+  .logo-text { line-height: 1.2; }
+  .logo-text .org { font-family: 'Playfair Display', serif; font-size: 1.35rem; font-weight: 800; color: var(--green-deep); }
+  .logo-text .sub { font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); }
+
+  nav { display: flex; gap: 28px; align-items: center; }
+  nav a {
+    color: var(--text);
+    text-decoration: none;
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    position: relative;
+    padding-bottom: 2px;
+    transition: color 0.2s;
+  }
+  nav a::after {
+    content: '';
+    position: absolute; bottom: 0; left: 0; right: 100%;
+    height: 2px; background: var(--gold);
+    transition: right 0.25s ease;
+  }
+  nav a:hover { color: var(--green-mid); }
+  nav a:hover::after { right: 0; }
+  nav .btn-cta {
+    background: var(--green-deep);
+    color: var(--gold-light) !important;
+    padding: 9px 20px;
+    border-radius: 4px;
+    letter-spacing: 0.08em;
+  }
+  nav .btn-cta::after { display: none; }
+  nav .btn-cta:hover { background: var(--green-mid); }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--green-deep);
+    position: relative;
+    overflow: hidden;
+    min-height: 560px;
+    display: flex; align-items: center;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse at 70% 50%, rgba(82,183,136,0.18) 0%, transparent 60%),
+      radial-gradient(ellipse at 20% 80%, rgba(201,168,76,0.12) 0%, transparent 50%);
+  }
+  .hero-pattern {
+    position: absolute; right: 0; top: 0; bottom: 0;
+    width: 45%;
+    background-image: repeating-linear-gradient(
+      45deg,
+      rgba(201,168,76,0.06) 0px,
+      rgba(201,168,76,0.06) 1px,
+      transparent 1px,
+      transparent 20px
+    );
+    clip-path: polygon(15% 0%, 100% 0%, 100% 100%, 0% 100%);
+  }
+  .hero-inner {
+    max-width: 1200px; margin: 0 auto;
+    padding: 80px 40px;
+    position: relative; z-index: 2;
+  }
+  .hero-badge {
+    display: inline-block;
+    background: rgba(201,168,76,0.2);
+    border: 1px solid var(--gold);
+    color: var(--gold-light);
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding: 5px 14px;
+    border-radius: 2px;
+    margin-bottom: 24px;
+    animation: fadeUp 0.7s ease both;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.4rem, 5vw, 4rem);
+    font-weight: 800;
+    color: var(--white);
+    line-height: 1.15;
+    max-width: 640px;
+    animation: fadeUp 0.7s 0.1s ease both;
+  }
+  .hero h1 em { color: var(--gold); font-style: italic; }
+  .hero-arabic {
+    font-family: 'Amiri', serif;
+    font-size: 1.5rem;
+    color: var(--gold-light);
+    margin: 20px 0 8px;
+    direction: rtl;
+    animation: fadeUp 0.7s 0.2s ease both;
+  }
+  .hero-verse {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.65);
+    max-width: 520px;
+    line-height: 1.7;
+    animation: fadeUp 0.7s 0.3s ease both;
+    margin-bottom: 36px;
+  }
+  .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; animation: fadeUp 0.7s 0.4s ease both; }
+  .btn-primary {
+    background: var(--gold);
+    color: var(--green-deep);
+    padding: 13px 30px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 3px;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
+  .btn-outline {
+    background: transparent;
+    border: 1.5px solid rgba(255,255,255,0.35);
+    color: var(--white);
+    padding: 13px 30px;
+    font-weight: 500;
+    font-size: 0.85rem;
+    letter-spacing: 0.06em;
+    text-decoration: none;
+    border-radius: 3px;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .btn-outline:hover { border-color: var(--gold); background: rgba(201,168,76,0.1); }
+
+  @keyframes fadeUp {
+    from { opacity:0; transform:translateY(22px); }
+    to   { opacity:1; transform:translateY(0); }
+  }
+
+  /* ── SECTIONS common ── */
+  section { padding: 80px 40px; }
+  .section-inner { max-width: 1200px; margin: 0 auto; }
+  .section-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--green-light);
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.7rem, 3vw, 2.6rem);
+    font-weight: 700;
+    color: var(--green-deep);
+    line-height: 1.25;
+    margin-bottom: 20px;
+  }
+  .divider {
+    width: 52px; height: 3px;
+    background: linear-gradient(90deg, var(--gold), var(--green-light));
+    border-radius: 2px;
+    margin-bottom: 32px;
+  }
+
+  /* ── ABOUT / INTRO ── */
+  .about { background: var(--white); }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+  .about-body p {
+    font-size: 1rem;
+    line-height: 1.85;
+    color: var(--text-muted);
+    margin-bottom: 16px;
+  }
+  .about-body p:first-of-type { color: var(--text); font-size: 1.08rem; }
+  .about-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 32px;
+  }
+  .stat-card {
+    background: var(--cream);
+    border-left: 3px solid var(--gold);
+    padding: 18px 20px;
+    border-radius: 0 6px 6px 0;
+  }
+  .stat-card .num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--green-deep);
+  }
+  .stat-card .label { font-size: 0.8rem; color: var(--text-muted); margin-top: 2px; }
+
+  .about-visual {
+    position: relative;
+  }
+  .about-quote-box {
+    background: var(--green-deep);
+    color: var(--white);
+    padding: 40px;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+  }
+  .about-quote-box::before {
+    content: '\201C';
+    font-family: 'Playfair Display', serif;
+    font-size: 9rem;
+    color: rgba(201,168,76,0.15);
+    position: absolute;
+    top: -20px; left: 10px;
+    line-height: 1;
+  }
+  .about-quote-box blockquote {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    font-style: italic;
+    position: relative; z-index: 1;
+    margin-bottom: 16px;
+  }
+  .about-quote-box cite {
+    font-size: 0.8rem;
+    color: var(--gold-light);
+    letter-spacing: 0.06em;
+    font-style: normal;
+    display: block;
+  }
+
+  /* ── MESSAGES ── */
+  .messages { background: var(--cream-dark); }
+  .messages-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    margin-top: 40px;
+  }
+  .message-card {
+    background: var(--white);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+    transition: transform 0.25s, box-shadow 0.25s;
+  }
+  .message-card:hover { transform: translateY(-4px); box-shadow: 0 8px 32px rgba(0,0,0,0.1); }
+  .message-card-header {
+    background: var(--green-deep);
+    padding: 24px 28px 18px;
+    position: relative;
+    overflow: hidden;
+  }
+  .message-card-header::after {
+    content: '';
+    position: absolute; bottom: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--gold), var(--green-light));
+  }
+  .message-card-header .portrait {
+    width: 64px; height: 64px;
+    border-radius: 50%;
+    background: rgba(201,168,76,0.2);
+    border: 2px solid var(--gold);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Amiri', serif;
+    font-size: 1.5rem;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+  .message-card-header h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    color: var(--white);
+    line-height: 1.4;
+  }
+  .message-card-header .role { font-size: 0.75rem; color: var(--gold-light); margin-top: 2px; }
+  .message-card-body { padding: 28px; }
+  .message-card-body p {
+    font-size: 0.93rem;
+    line-height: 1.8;
+    color: var(--text-muted);
+    margin-bottom: 14px;
+  }
+  .message-card-body p:first-child { font-style: italic; color: var(--text); }
+  .read-more {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 0.8rem; font-weight: 600;
+    color: var(--green-mid);
+    text-decoration: none;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    border-bottom: 1.5px solid var(--green-light);
+    padding-bottom: 1px;
+    transition: color 0.2s;
+  }
+  .read-more:hover { color: var(--gold); border-color: var(--gold); }
+
+  /* full-width secretary message */
+  .secretary-msg {
+    background: var(--green-deep);
+    border-radius: 8px;
+    padding: 48px;
+    margin-top: 32px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 40px;
+    align-items: start;
+    position: relative;
+    overflow: hidden;
+  }
+  .secretary-msg::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--gold), var(--green-light), var(--gold));
+  }
+  .secretary-portrait {
+    width: 100px; height: 100px;
+    border-radius: 50%;
+    background: rgba(201,168,76,0.15);
+    border: 3px solid var(--gold);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Amiri', serif;
+    font-size: 2.2rem;
+    color: var(--gold);
+    flex-shrink: 0;
+  }
+  .secretary-content .pre { font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
+  .secretary-content h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: var(--white);
+    margin-bottom: 20px;
+  }
+  .secretary-content p {
+    font-size: 0.95rem;
+    line-height: 1.85;
+    color: rgba(255,255,255,0.75);
+    margin-bottom: 14px;
+  }
+  .secretary-sig {
+    margin-top: 24px;
+    border-top: 1px solid rgba(201,168,76,0.3);
+    padding-top: 16px;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    color: var(--gold-light);
+    font-size: 1rem;
+  }
+  .secretary-sig .title { font-family: 'DM Sans', sans-serif; font-style: normal; font-size: 0.78rem; color: rgba(255,255,255,0.5); margin-top: 4px; }
+
+  /* ── ACTIVITIES ── */
+  .activities { background: var(--white); }
+  .activities-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 40px;
+  }
+  .activity-card {
+    border: 1px solid #e8e2d6;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: box-shadow 0.25s;
+  }
+  .activity-card:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.1); }
+  .activity-icon-wrap {
+    background: var(--green-deep);
+    padding: 28px;
+    display: flex; align-items: center; gap: 16px;
+  }
+  .activity-icon {
+    width: 46px; height: 46px;
+    background: rgba(201,168,76,0.15);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.4rem;
+  }
+  .activity-icon-wrap h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    color: var(--white);
+    line-height: 1.3;
+  }
+  .activity-body { padding: 22px; }
+  .activity-body p { font-size: 0.88rem; line-height: 1.75; color: var(--text-muted); }
+
+  /* ── EVENTS ── */
+  .events { background: var(--cream-dark); }
+  .events-list { margin-top: 40px; display: flex; flex-direction: column; gap: 0; }
+  .event-item {
+    display: grid;
+    grid-template-columns: 80px 1fr auto;
+    gap: 24px;
+    align-items: center;
+    padding: 24px 0;
+    border-bottom: 1px solid #ddd5c4;
+  }
+  .event-item:last-child { border-bottom: none; }
+  .event-date {
+    background: var(--green-deep);
+    color: var(--white);
+    border-radius: 6px;
+    padding: 10px;
+    text-align: center;
+  }
+  .event-date .day { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 800; line-height: 1; }
+  .event-date .mon { font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold-light); margin-top: 3px; }
+  .event-info h4 { font-size: 1rem; font-weight: 600; color: var(--text); margin-bottom: 4px; }
+  .event-info p { font-size: 0.85rem; color: var(--text-muted); }
+  .event-tag {
+    background: var(--cream);
+    border: 1px solid #d4c9b0;
+    color: var(--green-mid);
+    font-size: 0.73rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+
+  /* ── SERMON HIGHLIGHT ── */
+  .sermon { background: var(--white); }
+  .sermon-box {
+    background: linear-gradient(135deg, var(--green-deep) 0%, #0f2a1c 100%);
+    border-radius: 12px;
+    padding: 60px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    margin-top: 40px;
+  }
+  .sermon-box::before {
+    content: '';
+    position: absolute; right: -60px; top: -60px;
+    width: 300px; height: 300px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(201,168,76,0.12), transparent 70%);
+  }
+  .sermon-left .label { color: var(--gold); font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 12px; }
+  .sermon-left h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: var(--white);
+    line-height: 1.4;
+    margin-bottom: 12px;
+  }
+  .sermon-left .meta { font-size: 0.82rem; color: rgba(255,255,255,0.55); margin-bottom: 20px; }
+  .sermon-left p { font-size: 0.92rem; line-height: 1.8; color: rgba(255,255,255,0.7); margin-bottom: 20px; }
+  .sermon-links { display: flex; gap: 12px; flex-wrap: wrap; }
+  .sermon-link {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 9px 18px;
+    border-radius: 4px;
+    font-size: 0.8rem; font-weight: 600;
+    text-decoration: none;
+    transition: transform 0.15s;
+  }
+  .sermon-link:hover { transform: translateY(-1px); }
+  .sermon-link.en { background: var(--gold); color: var(--green-deep); }
+  .sermon-link.ur { background: transparent; border: 1.5px solid var(--gold); color: var(--gold-light); }
+  .sermon-right {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(201,168,76,0.25);
+    border-radius: 8px;
+    padding: 32px;
+    position: relative; z-index: 1;
+  }
+  .sermon-right .arabic-title {
+    font-family: 'Amiri', serif;
+    font-size: 1.4rem;
+    color: var(--gold-light);
+    direction: rtl;
+    text-align: right;
+    margin-bottom: 20px;
+    line-height: 1.8;
+  }
+  .sermon-right p { font-size: 0.88rem; color: rgba(255,255,255,0.65); line-height: 1.75; font-style: italic; }
+
+  /* ── LINKEDIN / JOIN ── */
+  .linkedin-section {
+    background: var(--cream-dark);
+    padding: 64px 40px;
+    text-align: center;
+  }
+  .linkedin-section .section-inner { max-width: 640px; }
+  .linkedin-icon {
+    width: 64px; height: 64px;
+    background: #0077b5;
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 24px;
+    font-size: 1.8rem;
+  }
+  .linkedin-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: var(--green-deep);
+    margin-bottom: 14px;
+  }
+  .linkedin-section p { font-size: 0.95rem; line-height: 1.8; color: var(--text-muted); margin-bottom: 28px; }
+  .btn-linkedin {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: #0077b5;
+    color: var(--white);
+    padding: 14px 32px;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .btn-linkedin:hover { background: #005e8e; transform: translateY(-1px); }
+
+  /* ── CONTACT ── */
+  .contact { background: var(--white); }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    margin-top: 40px;
+  }
+  .contact-info h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    color: var(--green-deep);
+    margin-bottom: 20px;
+  }
+  .contact-item {
+    display: flex; align-items: flex-start; gap: 14px;
+    margin-bottom: 20px;
+  }
+  .contact-item-icon {
+    width: 40px; height: 40px; flex-shrink: 0;
+    background: var(--cream-dark);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.1rem;
+  }
+  .contact-item-text .label { font-size: 0.73rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 2px; }
+  .contact-item-text a, .contact-item-text span { font-size: 0.93rem; color: var(--text); text-decoration: none; }
+  .contact-item-text a:hover { color: var(--green-mid); }
+
+  .contact-form { background: var(--cream); border-radius: 8px; padding: 36px; }
+  .contact-form h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    color: var(--green-deep);
+    margin-bottom: 24px;
+  }
+  .form-group { margin-bottom: 18px; }
+  .form-group label { display: block; font-size: 0.8rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 6px; }
+  .form-group input, .form-group textarea, .form-group select {
+    width: 100%;
+    padding: 11px 14px;
+    border: 1.5px solid #d4c9b0;
+    border-radius: 4px;
+    background: var(--white);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem;
+    color: var(--text);
+    transition: border-color 0.2s;
+    outline: none;
+  }
+  .form-group input:focus, .form-group textarea:focus, .form-group select:focus { border-color: var(--green-mid); }
+  .form-group textarea { resize: vertical; min-height: 110px; }
+  .btn-submit {
+    width: 100%;
+    background: var(--green-deep);
+    color: var(--white);
+    padding: 13px;
+    border: none;
+    border-radius: 4px;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+    font-size: 0.88rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .btn-submit:hover { background: var(--green-mid); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--green-deep);
+    color: rgba(255,255,255,0.7);
+    padding: 60px 40px 28px;
+  }
+  .footer-inner {
+    max-width: 1200px; margin: 0 auto;
+  }
+  .footer-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 48px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    margin-bottom: 28px;
+  }
+  .footer-brand .logo-icon { background: rgba(201,168,76,0.15); margin-bottom: 16px; }
+  .footer-brand .org { color: var(--white); }
+  .footer-brand .sub { color: rgba(255,255,255,0.5); }
+  .footer-brand p { font-size: 0.85rem; line-height: 1.7; margin-top: 14px; }
+  .footer-col h4 {
+    font-size: 0.75rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 16px;
+    font-weight: 600;
+  }
+  .footer-col a {
+    display: block;
+    color: rgba(255,255,255,0.65);
+    text-decoration: none;
+    font-size: 0.87rem;
+    margin-bottom: 10px;
+    transition: color 0.2s;
+  }
+  .footer-col a:hover { color: var(--gold-light); }
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.35);
+  }
+  .footer-bottom a { color: rgba(255,255,255,0.5); text-decoration: none; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .topbar { padding: 6px 20px; }
+    .header-inner, section { padding-left: 20px; padding-right: 20px; }
+    section { padding-top: 56px; padding-bottom: 56px; }
+    nav { display: none; }
+    .about-grid, .messages-grid, .contact-grid, .sermon-box { grid-template-columns: 1fr; gap: 32px; }
+    .activities-grid { grid-template-columns: 1fr; }
+    .footer-top { grid-template-columns: 1fr 1fr; gap: 32px; }
+    .secretary-msg { grid-template-columns: 1fr; }
+    .hero-inner { padding: 56px 20px; }
+    .linkedin-section { padding: 56px 20px; }
+    footer { padding: 48px 20px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <span class="topbar-bismillah">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيمِ</span>
+  <span>In the name of Allah, the Gracious, the Merciful &nbsp;|&nbsp;
+    <a href="https://www.ahmadiyya.se/" target="_blank">Ahmadiyya Sweden</a> &nbsp;|&nbsp;
+    <a href="https://www.alislam.org/" target="_blank">alislam.org</a>
+  </span>
+</div>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <div class="logo-area">
+      <div class="logo-icon">صت</div>
+      <div class="logo-text">
+        <div class="org">Sanat-O-Tijarat</div>
+        <div class="sub">Ahmadiyya Muslim Jamaat Sweden</div>
+      </div>
+    </div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#messages">Messages</a>
+      <a href="#activities">Activities</a>
+      <a href="#events">Events</a>
+      <a href="#sermon">Sermon</a>
+      <a href="#contact" class="btn-cta">Contact Us</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-pattern"></div>
+  <div class="hero-inner">
+    <div class="hero-badge">Commerce &amp; Trade Department · Sweden</div>
+    <h1>Excelling in <em>Commerce &amp; Trade</em> with Faith &amp; Integrity</h1>
+    <div class="hero-arabic">يَا أَيُّهَا الَّذِينَ آمَنُوا لَا تَأْكُلُوا أَمْوَالَكُم بَيْنَكُم بِالْبَاطِلِ</div>
+    <p class="hero-verse">
+      "O ye who believe! Devour not your property among yourselves by unlawful means, except that you earn by trade with mutual consent." — Holy Quran (4:29)
+    </p>
+    <div class="hero-actions">
+      <a href="#about" class="btn-primary">Discover Our Work</a>
+      <a href="#contact" class="btn-outline">Get In Touch</a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT / INTRO -->
+<section class="about" id="about">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-body">
+        <div class="section-label">Introduction</div>
+        <h2 class="section-title">Who We Are</h2>
+        <div class="divider"></div>
+        <p>
+          Sanat-O-Tijarat (Commerce &amp; Trade) is a national auxiliary department of the Ahmadiyya Muslim Jamaat Sweden, dedicated to supporting and empowering members in their professional and entrepreneurial pursuits — rooted in Islamic values of honesty, excellence, and mutual benefit.
+        </p>
+        <p>
+          Our department serves as a bridge between faith and profession, helping Ahmadi businesspeople, entrepreneurs, professionals, and students in Sweden connect, grow, and contribute positively to Swedish society and the broader economy.
+        </p>
+        <p>
+          We organise workshops, mentorship initiatives, networking events, and training programmes designed to foster professional excellence and ethical business conduct in line with the teachings of Islam Ahmadiyyat.
+        </p>
+        <div class="about-stats">
+          <div class="stat-card"><div class="num">Sweden</div><div class="label">National Chapter</div></div>
+          <div class="stat-card"><div class="num">2025</div><div class="label">Active Since</div></div>
+          <div class="stat-card"><div class="num">∞</div><div class="label">Faith-Driven Growth</div></div>
+          <div class="stat-card"><div class="num">AMJ</div><div class="label">Affiliated with World Jamaat</div></div>
+        </div>
+      </div>
+      <div class="about-visual">
+        <div class="about-quote-box">
+          <blockquote>
+            "Strive for excellence in your worldly affairs as you do in your spiritual ones; for a believer who succeeds in commerce and uses it in the way of Allah is among the most beneficial of people."
+          </blockquote>
+          <cite>— Spirit of Ahmadiyya Teachings on Sanat-O-Tijarat</cite>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MESSAGES -->
+<section class="messages" id="messages">
+  <div class="section-inner">
+    <div class="section-label">Inspiration &amp; Guidance</div>
+    <h2 class="section-title">Messages of Guidance</h2>
+    <div class="divider"></div>
+
+    <div class="messages-grid">
+      <!-- Hazrat Musleh Maud -->
+      <div class="message-card">
+        <div class="message-card-header">
+          <div class="portrait">م</div>
+          <h3>Hazrat Musleh Maud <span style="color:var(--gold)">(RA)</span></h3>
+          <div class="role">Second Caliph of the Ahmadiyya Muslim Community</div>
+        </div>
+        <div class="message-card-body">
+          <p>
+            "Engage in trade and commerce with full trust in Allah and with the highest degree of honesty. Do not let the pursuit of wealth distract you from your spiritual duties, nor let your faith be an excuse to neglect your worldly responsibilities."
+          </p>
+          <p>
+            Hazrat Musleh Maud (RA) consistently emphasised that Ahmadis must distinguish themselves in every field of life — including commerce, industry, and trade — as ambassadors of true Islamic values. He urged members to become economically self-sufficient so they could better serve the Jamaat and humanity.
+          </p>
+          <a href="https://www.alislam.org/" target="_blank" class="read-more">Read Full Message →</a>
+        </div>
+      </div>
+
+      <!-- Hazrat Mirza Tahir Ahmad -->
+      <div class="message-card">
+        <div class="message-card-header">
+          <div class="portrait">ط</div>
+          <h3>Hazrat Mirza Tahir Ahmad <span style="color:var(--gold)">(RA)</span></h3>
+          <div class="role">Khalifatul Masih Al-Rabi' — Friday Sermon, 15 April 1983</div>
+        </div>
+        <div class="message-card-body">
+          <p>
+            In his landmark sermon on excelling in all fields including Sanat-O-Tijarat, Hazrat Khalifatul Masih IV (RA) called upon all Ahmadi Muslims to pursue excellence in commerce, trade, and craftsmanship as a religious and communal obligation.
+          </p>
+          <p>
+            He outlined that the progress of the Jamaat was deeply linked to the economic and professional advancement of its members, and that engaging in honest trade was itself a form of worship. This sermon remains a foundational reference for our department's mission.
+          </p>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:4px;">
+            <a href="https://sotusa.wpengine.com/sermon-in-english/" target="_blank" class="read-more">Read in English →</a>
+            <a href="https://www.alislam.org/urdu/sermon/FST19830415-UR.pdf" target="_blank" class="read-more" style="margin-left:12px;">اردو میں پڑھیں →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Secretary Message -->
+    <div class="secretary-msg">
+      <div class="secretary-portrait">ص</div>
+      <div class="secretary-content">
+        <div class="pre">National Secretary's Message</div>
+        <h3>Message from the National Secretary — Sanat-O-Tijarat Sweden</h3>
+        <p>
+          Assalamu Alaikum wa Rahmatullahi wa Barakatuhu,
+        </p>
+        <p>
+          Dear brothers and sisters, professionals, entrepreneurs, and students — it is with great humility and gratitude to Allah that I serve as National Secretary of Sanat-O-Tijarat Sweden. This department exists not merely as an organisational unit, but as a living expression of our commitment to excellence in all spheres of life.
+        </p>
+        <p>
+          Sweden has provided us a remarkable environment to build, create, and contribute. Our responsibility is to honour this opportunity by embodying the highest standards of professional ethics and business integrity — as taught by our beloved Huzoor and the foundational guidance of our Khulafa.
+        </p>
+        <p>
+          I invite every Ahmadi professional, business owner, student, and entrepreneur in Sweden to connect with us, share your expertise, and join our growing network. Together, through commerce rooted in faith, we can be a shining example for the broader Swedish society.
+        </p>
+        <div class="secretary-sig">
+          National Secretary, Sanat-O-Tijarat
+          <div class="title">Ahmadiyya Muslim Jamaat Sweden</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACTIVITIES -->
+<section class="activities" id="activities">
+  <div class="section-inner">
+    <div class="section-label">What We Do</div>
+    <h2 class="section-title">Activities &amp; Ongoing Work</h2>
+    <div class="divider"></div>
+    <div class="activities-grid">
+      <div class="activity-card">
+        <div class="activity-icon-wrap">
+          <div class="activity-icon">🤝</div>
+          <h4>Professional Networking</h4>
+        </div>
+        <div class="activity-body">
+          <p>Facilitating connections between Ahmadi professionals, entrepreneurs, and business owners across Sweden. We organise regular meetups, online forums, and LinkedIn group engagement to foster meaningful professional relationships.</p>
+        </div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-icon-wrap">
+          <div class="activity-icon">📚</div>
+          <h4>Training &amp; Workshops</h4>
+        </div>
+        <div class="activity-body">
+          <p>Practical skill-building sessions covering business planning, Swedish business law, financial literacy, entrepreneurship, and career development — designed to equip community members with tools for professional success.</p>
+        </div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-icon-wrap">
+          <div class="activity-icon">🌱</div>
+          <h4>Mentorship Programme</h4>
+        </div>
+        <div class="activity-body">
+          <p>Pairing experienced professionals and entrepreneurs with younger members and newcomers, providing guidance on navigating Swedish professional culture, starting businesses, and advancing in careers.</p>
+        </div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-icon-wrap">
+          <div class="activity-icon">💼</div>
+          <h4>Business Ethics &amp; Islam</h4>
+        </div>
+        <div class="activity-body">
+          <p>Regular study circles and discussions on Quranic principles of trade, the prohibition of Riba (interest), ethical investment, and the Hadith on honest dealings — integrating spiritual grounding with professional practice.</p>
+        </div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-icon-wrap">
+          <div class="activity-icon">🎓</div>
+          <h4>Youth Career Support</h4>
+        </div>
+        <div class="activity-body">
+          <p>Dedicated programmes for Ahmadi students and young professionals: CV workshops, mock interviews, university application guidance, and access to a directory of Ahmadi professionals willing to support youth career growth.</p>
+        </div>
+      </div>
+      <div class="activity-card">
+        <div class="activity-icon-wrap">
+          <div class="activity-icon">🌍</div>
+          <h4>Community Reporting</h4>
+        </div>
+        <div class="activity-body">
+          <p>Compiling annual reports on the professional demographics and economic contributions of Ahmadi Muslims in Sweden, and coordinating with international Sanat-O-Tijarat departments to share best practices.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EVENTS -->
+<section class="events" id="events">
+  <div class="section-inner">
+    <div class="section-label">Calendar</div>
+    <h2 class="section-title">Upcoming Events &amp; Important Dates</h2>
+    <div class="divider"></div>
+    <div class="events-list">
+      <div class="event-item">
+        <div class="event-date"><div class="day">20</div><div class="mon">Jun 2026</div></div>
+        <div class="event-info">
+          <h4>Sanat-O-Tijarat National Annual Meeting 2026</h4>
+          <p>Annual gathering for members to review the year's work, set goals, and strengthen the national network. Location: TBD — register your interest early.</p>
+        </div>
+        <span class="event-tag">Annual</span>
+      </div>
+      <div class="event-item">
+        <div class="event-date"><div class="day">12</div><div class="mon">Jul 2026</div></div>
+        <div class="event-info">
+          <h4>Entrepreneurship &amp; Business Ethics Workshop</h4>
+          <p>A half-day workshop on starting and running a business in Sweden with Islamic ethical principles. Open to all Ahmadi adults.</p>
+        </div>
+        <span class="event-tag">Workshop</span>
+      </div>
+      <div class="event-item">
+        <div class="event-date"><div class="day">02</div><div class="mon">Aug 2026</div></div>
+        <div class="event-info">
+          <h4>Jalsa Salana Sweden 2026 — SoT Stall</h4>
+          <p>We will host an information and networking stall at Jalsa Salana Sweden. Come meet the team and learn about our programmes.</p>
+        </div>
+        <span class="event-tag">Jalsa</span>
+      </div>
+      <div class="event-item">
+        <div class="event-date"><div class="day">15</div><div class="mon">Sep 2026</div></div>
+        <div class="event-info">
+          <h4>LinkedIn Profile Optimisation Session</h4>
+          <p>Online session to help members maximise their LinkedIn presence, grow the Ahmadiyya LinkedIn Group, and leverage professional networks.</p>
+        </div>
+        <span class="event-tag">Online</span>
+      </div>
+      <div class="event-item">
+        <div class="event-date"><div class="day">10</div><div class="mon">Oct 2026</div></div>
+        <div class="event-info">
+          <h4>Youth Career Day — Stockholm</h4>
+          <p>Dedicated event for Ahmadi students and young professionals featuring panel discussions, CV clinics, and networking with established professionals.</p>
+        </div>
+        <span class="event-tag">Youth</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERMON HIGHLIGHT -->
+<section class="sermon" id="sermon">
+  <div class="section-inner">
+    <div class="section-label">Foundational Guidance</div>
+    <h2 class="section-title">Landmark Sermon on Commerce &amp; Excellence</h2>
+    <div class="divider"></div>
+    <div class="sermon-box">
+      <div class="sermon-left">
+        <div class="label">Khutbat-e-Tahir · Volume 2</div>
+        <h3>Friday Sermon on Excelling in All Fields Including Sanat-O-Tijarat</h3>
+        <div class="meta">Hazrat Mirza Tahir Ahmad (RA) · 15 April 1983 · Pages 217–228</div>
+        <p>
+          In this landmark sermon, Hazrat Khalifatul Masih IV (RA) delivered a comprehensive vision for Ahmadi Muslims to excel in commerce, trade, and craft — not merely as a worldly pursuit, but as a divine obligation. He outlined that economic strength of the Jamaat was inseparable from its spiritual mission.
+        </p>
+        <p>
+          He called on members to pursue professional and business excellence as an act of worship, to engage in ethical trade, to avoid all forms of dishonesty, and to contribute their skills and resources to the betterment of society.
+        </p>
+        <div class="sermon-links">
+          <a href="https://sotusa.wpengine.com/sermon-in-english/" target="_blank" class="sermon-link en">🇬🇧 Read in English</a>
+          <a href="https://www.alislam.org/urdu/sermon/FST19830415-UR.pdf" target="_blank" class="sermon-link ur">اردو میں پڑھیں</a>
+        </div>
+      </div>
+      <div class="sermon-right">
+        <div class="arabic-title">
+          خطبات طاہر<br/>
+          جلد ۲ · ۱۵ اپریل ۱۹۸۳ء<br/>
+          صفحہ ۲۱۷–۲۲۸
+        </div>
+        <p>
+          "A believer who engages in honest commerce, who deals fairly with all people regardless of their faith, who uses the blessings of Allah in His path — such a person fulfils a noble duty and elevates the standing of the Jamaat in the eyes of the world."
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LINKEDIN -->
+<div class="linkedin-section" id="linkedin">
+  <div class="section-inner">
+    <div class="linkedin-icon">💼</div>
+    <h2>Join Our Ahmadiyya LinkedIn Group</h2>
+    <p>
+      Connect with Ahmadi professionals across Sweden and the world. Our LinkedIn group is a space for networking, sharing opportunities, mentorship, and professional development — all within a community grounded in shared values.
+    </p>
+    <a href="https://www.linkedin.com/" target="_blank" class="btn-linkedin">
+      <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      Join the LinkedIn Group
+    </a>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="section-inner">
+    <div class="section-label">Get In Touch</div>
+    <h2 class="section-title">Contact Us</h2>
+    <div class="divider"></div>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>Sanat-O-Tijarat Sweden</h3>
+        <div class="contact-item">
+          <div class="contact-item-icon">🕌</div>
+          <div class="contact-item-text">
+            <div class="label">Organisation</div>
+            <span>Ahmadiyya Muslim Jamaat Sweden</span>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">📧</div>
+          <div class="contact-item-text">
+            <div class="label">Email</div>
+            <a href="mailto:tijarat@ahmadiyya.se">tijarat@ahmadiyya.se</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">🌐</div>
+          <div class="contact-item-text">
+            <div class="label">Main Website</div>
+            <a href="https://www.ahmadiyya.se" target="_blank">www.ahmadiyya.se</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">📍</div>
+          <div class="contact-item-text">
+            <div class="label">Country</div>
+            <span>Sweden 🇸🇪</span>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">📱</div>
+          <div class="contact-item-text">
+            <div class="label">International HQ</div>
+            <a href="https://www.alislam.org" target="_blank">www.alislam.org</a>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form">
+        <h3>Send Us a Message</h3>
+        <div class="form-group">
+          <label>Full Name</label>
+          <input type="text" placeholder="Your full name" />
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" placeholder="your@email.com" />
+        </div>
+        <div class="form-group">
+          <label>Subject</label>
+          <select>
+            <option>General Inquiry</option>
+            <option>Join / Membership</option>
+            <option>Upcoming Events</option>
+            <option>Mentorship</option>
+            <option>Training Programmes</option>
+            <option>LinkedIn Group</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Message</label>
+          <textarea placeholder="How can we help you?"></textarea>
+        </div>
+        <button class="btn-submit">Send Message</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="logo-area">
+          <div class="logo-icon footer-brand">صت</div>
+          <div class="logo-text">
+            <div class="org">Sanat-O-Tijarat</div>
+            <div class="sub">Ahmadiyya Sweden</div>
+          </div>
+        </div>
+        <p>A department of Ahmadiyya Muslim Jamaat Sweden dedicated to professional excellence, ethical commerce, and economic empowerment rooted in Islamic values.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <a href="#about">About Us</a>
+        <a href="#messages">Messages</a>
+        <a href="#activities">Activities</a>
+        <a href="#events">Events</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <a href="https://sotusa.wpengine.com/sermon-in-english/" target="_blank">Sermon in English</a>
+        <a href="https://www.alislam.org/urdu/sermon/FST19830415-UR.pdf" target="_blank">Sermon in Urdu</a>
+        <a href="https://www.alislam.org" target="_blank">Al-Islam.org</a>
+        <a href="https://sotusa.org" target="_blank">SoT USA</a>
+      </div>
+      <div class="footer-col">
+        <h4>Jamaat Sweden</h4>
+        <a href="https://www.ahmadiyya.se" target="_blank">Ahmadiyya.se</a>
+        <a href="https://www.jalsasalana.se" target="_blank">Jalsa Salana SE</a>
+        <a href="https://www.alislam.org" target="_blank">World Jamaat</a>
+        <a href="https://www.linkedin.com/" target="_blank">LinkedIn Group</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Sanat-O-Tijarat — Ahmadiyya Muslim Jamaat Sweden. All rights reserved.</span>
+      <span>
+        <a href="https://www.ahmadiyya.se" target="_blank">Main Site</a> &nbsp;·&nbsp;
+        <a href="https://www.alislam.org" target="_blank">alislam.org</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
